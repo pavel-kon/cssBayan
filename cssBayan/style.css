@@ -1,0 +1,28 @@
+/** Reset */
+
+html,
+body {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+html {
+	font-size: 62, 5%;
+}
+
+body {
+	font-size: 1.8rem;
+}
