@@ -22,11 +22,15 @@ img {
 }
 
 html {
-	font-size: 62, 5%;
+	font-size: 62.5%;
 }
 
 body {
-	font-size: 1.8rem;
+	font-size: 3.6rem;
+}
+
+h1 {
+	margin-bottom: 1rem;
 }
 
 .accordeon {
@@ -48,6 +52,7 @@ label {
 	padding: 1rem 0;
 	font-weight: 900;
 	color: blue;
+	font-size: 1.4em;
 }
 .accordeon:hover label {
 	color: black;
@@ -76,8 +81,38 @@ label::after {
 	opacity: 1;
 	width: 100%;
 }
+.item:active .item__content {
+	/* display: block; */
+	opacity: 1;
+	width: 100%;
+}
 input:checked ~ .item__content {
 	/* display: block; */
 	opacity: 1;
 	width: 100%;
+}
+
+input:checked + label {
+	color: black;
+}
+input:checked + label::after {
+	transform: rotate(135deg);
+}
+
+@media (hover: hover) {
+	.item,
+	label {
+		cursor: pointer;
+	}
+}
+
+@media (max-width: 820px) {
+	html {
+		font-size: 48%;
+	}
+}
+@media (max-width: 320px) {
+	html {
+		font-size: 38%;
+	}
 }
