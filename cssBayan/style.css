@@ -1,0 +1,118 @@
+/** Reset */
+
+html,
+body {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	width: auto;
+	max-width: 70%;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 3.6rem;
+}
+
+h1 {
+	margin-bottom: 1rem;
+}
+
+.accordeon {
+	max-width: 1200px;
+	width: 90%;
+	margin: 2rem auto;
+}
+
+input {
+	appearance: none;
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+label {
+	display: block;
+	position: relative;
+	border-top: 1px solid gray;
+	padding: 1rem 0;
+	font-weight: 900;
+	color: blue;
+	font-size: 1.4em;
+}
+.accordeon:hover label {
+	color: black;
+}
+label::after {
+	content: '+';
+	position: absolute;
+	font-weight: 900;
+	right: 0;
+	transition: all ease-in-out 0.3s;
+}
+
+.item:hover label::after {
+	transform: rotate(135deg);
+}
+
+.item__content {
+	/* display: none; */
+	width: 0;
+	opacity: 0;
+	transition: all ease-in-out 0.5s;
+}
+
+.item:hover .item__content {
+	/* display: block; */
+	opacity: 1;
+	width: 100%;
+}
+.item:active .item__content {
+	/* display: block; */
+	opacity: 1;
+	width: 100%;
+}
+input:checked ~ .item__content {
+	/* display: block; */
+	opacity: 1;
+	width: 100%;
+}
+
+input:checked + label {
+	color: black;
+}
+input:checked + label::after {
+	transform: rotate(135deg);
+}
+
+@media (hover: hover) {
+	.item,
+	label {
+		cursor: pointer;
+	}
+}
+
+@media (max-width: 820px) {
+	html {
+		font-size: 48%;
+	}
+}
+@media (max-width: 320px) {
+	html {
+		font-size: 38%;
+	}
+}
