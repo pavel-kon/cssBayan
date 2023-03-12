@@ -15,8 +15,10 @@ body {
 
 img {
 	width: auto;
-	max-width: 100%;
+	max-width: 70%;
 	height: auto;
+	margin: 0 auto;
+	display: block;
 }
 
 html {
@@ -29,17 +31,53 @@ body {
 
 .accordeon {
 	max-width: 1200px;
-	width: 94%;
-	margin: 0 auto;
+	width: 90%;
+	margin: 2rem auto;
+}
+
+input {
+	appearance: none;
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+label {
+	display: block;
+	position: relative;
+	border-top: 1px solid gray;
+	padding: 1rem 0;
+	font-weight: 900;
+	color: blue;
+}
+.accordeon:hover label {
+	color: black;
+}
+label::after {
+	content: '+';
+	position: absolute;
+	font-weight: 900;
+	right: 0;
+	transition: all ease-in-out 0.3s;
+}
+
+.item:hover label::after {
+	transform: rotate(135deg);
 }
 
 .item__content {
-	display: none;
+	/* display: none; */
+	width: 0;
+	opacity: 0;
+	transition: all ease-in-out 0.5s;
 }
 
-label:hover ~ .item__content {
-	display: block;
+.item:hover .item__content {
+	/* display: block; */
+	opacity: 1;
+	width: 100%;
 }
 input:checked ~ .item__content {
-	display: block;
+	/* display: block; */
+	opacity: 1;
+	width: 100%;
 }
